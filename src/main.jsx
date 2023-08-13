@@ -5,10 +5,25 @@ import App from './Pages/home/index.jsx';
 import GlobalStyle from './utils/style/GlobalStyle.js';
 import Logement from './Pages/Logement/index.jsx';
 import Apropos from './Pages/A-Propos/index.jsx';
+import Header from './layout/Header/index.jsx';
+import Footer from './layout/Footer/index.jsx';
+import Error from './Pages/Error/index.jsx';
+
+const HeaderFooterLayout = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
+export default HeaderFooterLayout;
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    element: <HeaderFooterLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
