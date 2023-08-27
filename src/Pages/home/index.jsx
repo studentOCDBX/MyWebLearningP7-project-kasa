@@ -6,40 +6,47 @@ import FlatCard from '../../components/FlatCard/index.jsx';
 import BannerImage from '../../assets/homeBanner.jpg';
 
 const Wrapper = styled.div`
-  position: relative;
-
-  & .BannerContainer {
+& .BannerContainer {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${BannerImage});
-    background-position: center;
-    background-size: cover;
+      object-fit:cover;
     filter: brightness(65%);
     border-radius: 1.5rem;
     width: 100%;
-    height: 14.5rem;
-    margin: auto;
+    height:233px;
+      @media screen and (max-width: 800px) {
+    height: 111px;
+    border-radius: 0.5rem;
+    }    
   }
 `;
 
 const BannerTitle = styled.p`
-  position: absolute;
-  z-index: 1;
+position:relative;
+z-index:1;
+top:-201px;
+left:28%;
   color: ${colors.secondary};
   font-size: 48px;
   line-height: 68.45px;
   @media screen and (max-width: 800px) {
+    width:217px;
+    height:48px;
     font-size: 24px;
     line-height: 24px;
+    top:-104px;
+    left:4%;
   }
 `;
 
 const MainContainer = styled.div`
   width: 86%;
-  margin: auto;
+  margin-inline: auto;
+  margin-top: -9%;
   margin-bottom: 2.8rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-evenly;
   background: ${colors.greylightBackground};
   border-radius: 1.5rem;
