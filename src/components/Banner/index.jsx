@@ -3,15 +3,10 @@ import PropTypes from 'prop-types';
 
 const BannerWrapper = styled.div`
   width: 86%;
-  height: 14.5rem;
   margin: auto;
   margin-block: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
   @media screen and (max-width: 800px) {
-    margin-bottom: 4px;
+    margin-bottom: -96px;
   }
 `;
 
@@ -20,6 +15,9 @@ function Banner({ children }) {
 }
 
 Banner.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
 };
 export default Banner;

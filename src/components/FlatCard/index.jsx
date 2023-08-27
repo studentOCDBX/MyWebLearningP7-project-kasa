@@ -13,8 +13,8 @@ const CardContainer = styled.div`
 const CardImage = styled.img`
   object-fit: cover;
   border-radius: 0.62rem;
-  height: 21.25rem;
   width: 100%;
+  height:255px;
 `;
 const CardTitle = styled.h2`
   position: absolute;
@@ -37,7 +37,7 @@ function FlatCard({ flatInfos }) {
   );
 }
 FlatCard.propTypes = {
-  flatInfos: PropTypes.string,
+  flatInfos: PropTypes.object,
 };
 
 export default FlatCard;
