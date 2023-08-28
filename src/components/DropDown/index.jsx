@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 `;
 
 const DropdownHeader = styled.div`
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   height: 3rem;
   padding-inline: 1rem;
   background-color: ${colors.primary};
@@ -82,11 +82,11 @@ const Wrapper__Container = styled.div`
 
 function DropDown({ dropTitle, wrapperContent }) {
   const [isContentVisible, setIsContentVisible] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [AnimChevron, setAnimChevron] = useState(false);
 
   const handleClick = () => {
     setIsContentVisible(!isContentVisible);
-    setIsOpen(!isOpen)
+    setAnimChevron(!AnimChevron)
   };
 
   return (
@@ -96,7 +96,7 @@ function DropDown({ dropTitle, wrapperContent }) {
         <DropdownHeader__ChevronContainer
           onClick={handleClick}
         >
-          {isOpen ? (
+          {AnimChevron ? (
             <img src={arrowUp} alt="Chevron Up img" />
           ) : (
             <img src={arrowBack} alt="Chevron Down img" />
