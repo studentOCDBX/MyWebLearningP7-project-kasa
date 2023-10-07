@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import colors from '../../utils/style/colors.js';
 import PropTypes from 'prop-types';
 import arrowUp from '../../assets/arrow_up.png';
-import arrowBack from '../../assets/arrow_back.png';
+import arrowBack from '../../assets/arrow_down.png';
 import { useState } from 'react';
 
 const wraperAnimation = keyframes`
@@ -62,7 +62,7 @@ const Wrapper__Container = styled.div`
   color: ${colors.primary};
   z-index: -1;
   animation-name: ${wraperAnimation} ;
-  animation-duration:2s;
+  animation-duration:1s;
   animation-timing-function:ease-in-out;
   & p {
     padding: 1rem;
@@ -80,7 +80,7 @@ const Wrapper__Container = styled.div`
   }
 `;
 
-function DropDown({ dropTitle, wrapperContent }) {
+function DropDown({ dropTitle, wrapperContent, type }) {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const [AnimChevron, setAnimChevron] = useState(false);
 
@@ -105,16 +105,22 @@ function DropDown({ dropTitle, wrapperContent }) {
       </DropdownHeader>
       {isContentVisible && (
         <Wrapper__Container>
-          <p>{wrapperContent}</p>
+          {type == "list"} ?
+          (<p>{wrapperContent}</p>):
+          (<ul>{wrapperContent}</ul>)
         </Wrapper__Container>
-      )}
-    </Wrapper>
+      )
+      }
+    </Wrapper >
   );
 }
-
+// <ul>{wrapperContent.map(e => {<li>e</li>})}</ul>
 DropDown.propTypes = {
   dropTitle: PropTypes.string,
-  wrapperContent: PropTypes.string,
+  wrapperContent: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
 };
 
 export default DropDown;
