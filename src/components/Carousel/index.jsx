@@ -9,9 +9,8 @@ const CarouselContainer = styled.div`
   width: 100%;
   height: 25.9rem;
   margin-top: 1rem;
-  // border-radius: 1.5rem;
   & img{
-    // box-shadow: rgba(149 157 165 /20%) 0px 8px 24px;
+    box-shadow: rgba(149 157 165 /20%) 0px 8px 24px;
     // transition:opacity ease-in-out 0.4s;
     position:absolute;
     inset: 0px;
@@ -19,6 +18,10 @@ const CarouselContainer = styled.div`
     width:100%;
     height:100%;
     object-fit:cover;
+    //  @media screen and (max-width: 800px) {
+    //    width: 30%;
+    //    height: 255px;
+    // }
   }
 `;
 

@@ -14,6 +14,10 @@ const FooterContainer = styled.div`
   & p {
     color: #fff;
   }
+    @media screen and (max-width: 800px) {
+    width: 100vw;
+  
+  }
 `;
 
 function Footer() {

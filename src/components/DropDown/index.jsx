@@ -64,23 +64,15 @@ const Wrapper__Container = styled.div`
   animation-name: ${wraperAnimation} ;
   animation-duration:1s;
   animation-timing-function:ease-in-out;
-  & p {
-    padding: 1rem;
-    margin:auto;
-     font-weight: 400;
+      font-weight: 400;
     font-size: 24px;
     line-height: 34.22px;
-      @media screen and (max-width: 800px) {
-    padding: 0.5rem;
-     font-weight: 400;
-    font-size: 12px;
-    line-height: 17.11px;
-  
-  }
+    padding: 1rem;
+ 
   }
 `;
 
-function DropDown({ dropTitle, wrapperContent, type }) {
+function DropDown({ dropTitle, Content }) {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const [AnimChevron, setAnimChevron] = useState(false);
 
@@ -105,16 +97,13 @@ function DropDown({ dropTitle, wrapperContent, type }) {
       </DropdownHeader>
       {isContentVisible && (
         <Wrapper__Container>
-          {type == "list"} ?
-          (<p>{wrapperContent}</p>):
-          (<ul>{wrapperContent}</ul>)
+          {Content}
         </Wrapper__Container>
       )
       }
     </Wrapper >
   );
 }
-// <ul>{wrapperContent.map(e => {<li>e</li>})}</ul>
 DropDown.propTypes = {
   dropTitle: PropTypes.string,
   wrapperContent: PropTypes.oneOfType([

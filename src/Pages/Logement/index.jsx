@@ -9,16 +9,22 @@ import StarInActive from "../../assets/star-inactive.png";
 import Tag from "../../components/Tag/index.jsx";
 
 const MainWrapper = styled.div`
-    width: 77.5rem;
+    width: 86%;
     margin: auto;
     display: flex;
     flex-direction: column;
+   
 `;
 const TitleContainer = styled.div`
-  width: 77.5rem;
+  width:100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
+     @media screen and (max-width: 800px) {
+    width:100vw;
+    display: flex;
+     flex-direction: column;
+    }
 `;
 const LeftContainer = styled.div`
   display: flex;
@@ -77,16 +83,66 @@ const FlatInfos = styled.div`
   display: flex;
   flex-basis: 50%;
   gap: 4rem;
+  & ul {
+    margin-top:0px;
+    margin-bottom:0px;
+  }
+   @media screen and (max-width: 800px) {
+    width:100vw;
+     display: flex;
+     flex-direction: column;
+    }
 `;
 
 function Logement() {
-    const { id } = useParams();
-    const logements = logementInfos.find((e) => e.id === id);
-    return (
-        <MainWrapper>
-            <Carousel pictures={logements.pictures} />
-        </MainWrapper>
-    );
+  const { id } = useParams();
+  const apartment = logementInfos.find((e) => e.id === id);
+  const range = [1, 2, 3, 4, 5];
+  return (
+    <MainWrapper>
+      <Carousel pictures={apartment.pictures} />
+      <TitleContainer>
+        <LeftContainer>
+          <LeftTitleContainer>
+            <h1>{apartment.title}</h1>
+            <p>{apartment.location}</p>
+          </LeftTitleContainer>
+          <LeftTagsContainer>
+            {apartment.tags.map((info, index) => {
+              return <Tag tagInfo={info} key={index} />;
+            })}
+          </LeftTagsContainer>
+        </LeftContainer>
+        <RightContainer>
+          <HostDetails>
+            <HostPhotoContainer>
+              <img src={apartment.host.picture} alt="owner image" />
+            </HostPhotoContainer>
+            <p>{apartment.host.name}</p>
+          </HostDetails>
+          <HostRating>
+            {range.map((num) => (
+              <div key={num}>
+                {apartment.rating >= num ? (
+                  <img src={StarActive} alt="active rating star" />
+                ) : (
+                  <img src={StarInActive} alt="active rating star" />
+                )}
+              </div>
+            ))}
+          </HostRating>
+        </RightContainer>
+      </TitleContainer>
+      <FlatInfos>
+        <DropDown dropTitle="description" Content={apartment.description} type="text" />
+        <DropDown dropTitle="equipements" Content={apartment.equipments.map((element, index) => (
+          <ul key={index}>
+            <li>{element}</li>
+          </ul>
+        ))} />
+      </FlatInfos>
+    </MainWrapper>
+  );
 }
 
 export default Logement;

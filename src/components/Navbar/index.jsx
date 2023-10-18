@@ -3,21 +3,18 @@ import { styled } from 'styled-components';
 import colors from '../../utils/style/colors.js';
 
 const NavLinkWrapper = styled.nav`
-  width: 23%;
+  width: 20%;
+  height: 34px;
   left: 931px;
   top: 17px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 34px;
   font-weight: 500;
   font-size: 24px;
 
-  @media screen and (max-width: 1050px) {
-    width: 30%;
-  }
   @media screen and (max-width: 800px) {
-    width: 140px;
+      width: 70%;
     height: 17px;
     display: flex;
     justify-content: space-between;

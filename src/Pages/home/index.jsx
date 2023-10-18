@@ -53,7 +53,8 @@ const MainContainer = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
   @media screen and (max-width: 800px) {
-    width: 86%;
+    // width: 90%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     background: ${colors.secondary};
