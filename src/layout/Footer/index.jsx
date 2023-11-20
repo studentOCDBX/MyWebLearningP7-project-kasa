@@ -4,7 +4,6 @@ import colors from '../../utils/style/colors.js';
 
 const FooterContainer = styled.div`
   height: 209px;
-  margin: auto;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;

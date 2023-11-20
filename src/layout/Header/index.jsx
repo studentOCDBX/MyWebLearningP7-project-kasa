@@ -11,38 +11,35 @@ const HeaderWrapper = styled.div`
   align-items: center;
   padding-top: 2.5rem;
   padding-inline: 5.25rem;
-  @media screen and (max-width: 800px) {
-    gap:1rem;
+  & a {
+    width:50%;
+     @media screen and (max-width: 800px) {
     display: flex;
-    justify-content:center;
-      align-items: center;
-    width: 85%;
-    padding-inline: 30px;
+    justify-content: center;
+    align-items: center;
+    }
+     @media screen and (min-device-width: 768px) {
+      justify-content: flex-start;
   }
+  }
+  @media screen and (max-width: 800px) {
+    display: flex;
+    gap:1rem;
+    justify-content:space-between;
+    align-items: center;
+    padding-inline: 30px;
+    margin-bottom: -32px;
+  }
+ 
 `;
 
-// const LogoContainer = styled.div`
-//   width: 211px;
-//   // width: 50%;
-//   height: 68px;
-//   background-image: url(${LOGO});
-//   @media screen and (max-width: 800px) {
-//     // width: 145px;
-//     width: 50%;
-//     height: 47px;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-// `;
 const LogoContainer = styled.div`
 & img{
-  width: 100%;
-}
+
   @media screen and (max-width: 800px) {
-    width: 80%;
-    height: 47px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
+    height: 47px;  
+    }
   }
 `;
 

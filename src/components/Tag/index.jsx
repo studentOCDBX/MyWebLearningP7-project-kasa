@@ -3,14 +3,19 @@ import colors from "../../utils/style/colors.js";
 /* eslint-disable react/prop-types */
 
 const Wrapper = styled.div`
-  width: 11.5rem;
-  height: 1.6rem;
+  width: 30%;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${colors.primary};
-  border-radius: 0.7rem;
-  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+   white-space: nowrap;
+  overflow: hidden;
+  @media screen and (max-width: 800px) {
+    height:24px;
+    width: 100%;
+  }
 `;
 
 function Tag({ tagInfo }) {

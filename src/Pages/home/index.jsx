@@ -53,7 +53,6 @@ const MainContainer = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
   @media screen and (max-width: 800px) {
-    // width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -73,9 +72,9 @@ function Home() {
         <BannerTitle>Chez vous, partout et ailleurs</BannerTitle>
       </Banner>
       <MainContainer>
-        {logements.map((logement) => {
-          return <FlatCard flatInfos={logement} key={logement.id} />;
-        })}
+        {logements.map((logement) =>
+          <FlatCard flatInfos={logement} key={logement.id} />
+        )}
       </MainContainer>
     </Wrapper>
   );

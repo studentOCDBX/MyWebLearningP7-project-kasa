@@ -14,20 +14,19 @@ transform:translateY(0);
 `;
 
 const Wrapper = styled.div`
-  overflow:hidden;
+  width: 75%;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  overflow:hidden;
   margin-inline: auto;
   margin-bottom: 2rem;
      @media screen and (max-width: 800px) {
-    width:86%;
-  
+    width:100%;
   }
 `;
 
 const DropdownHeader = styled.div`
-  border-radius: 0.3rem;
+  border-radius: 0.7rem;
   height: 3rem;
   padding-inline: 1rem;
   background-color: ${colors.primary};
@@ -37,16 +36,16 @@ const DropdownHeader = styled.div`
   align-items: center;
   & h2 {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 34.22px;
+    font-size: 18px;
+    line-height: 25.67px;
     text-transform: capitalize;
-      @media screen and (max-width: 800px) {
-    font-size: 13px;
-    line-height: 18.54px;
-  }
+        @media screen and (max-width: 800px) {
+      font-size: 13px;
+      line-height: 18.54px;
+    }
   }
    @media screen and (max-width: 800px) {
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
     height:35px;
   }
 `;
@@ -57,18 +56,22 @@ const DropdownHeader__ChevronContainer = styled.div`
   cursor: pointer;
 `;
 
-const Wrapper__Container = styled.div`
+const Content__Wrapper = styled.div`
   background-color: ${colors.greylightBackground};
   color: ${colors.primary};
   z-index: -1;
   animation-name: ${wraperAnimation} ;
   animation-duration:1s;
   animation-timing-function:ease-in-out;
-      font-weight: 400;
-    font-size: 24px;
-    line-height: 34.22px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25.67px;
     padding: 1rem;
- 
+    min-height:100%;
+      @media screen and (max-width: 800px) {
+      font-size: 12px;
+      line-height: 17.11px;
+
   }
 `;
 
@@ -96,9 +99,9 @@ function DropDown({ dropTitle, Content }) {
         </DropdownHeader__ChevronContainer>
       </DropdownHeader>
       {isContentVisible && (
-        <Wrapper__Container>
+        <Content__Wrapper>
           {Content}
-        </Wrapper__Container>
+        </Content__Wrapper>
       )
       }
     </Wrapper >
