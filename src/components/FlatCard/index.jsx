@@ -9,6 +9,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   border-radius: 0.62rem;
   flex-basis: 30%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
 `;
 const CardImage = styled.img`
   object-fit: cover;
