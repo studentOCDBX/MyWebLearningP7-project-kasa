@@ -102,17 +102,18 @@ function Carousel({ pictures }) {
     <CarouselContainer >
       <IndexInfoContainer >{imageIndex}/{pictures.length}</IndexInfoContainer>
       <img src={pictures[imageIndex - 1]} alt="room's image" />
-      <ArrowContainer
+
+      {pictures.length > 1 && (<> <ArrowContainer
         onClick={() => toggleImage(-1)}
         className="previewArrow">
         <img src={previewArrow} alt="previewArrow image" />
       </ArrowContainer>
-      <ArrowContainer
-        onClick={() => toggleImage(1)}
-        className=" nextArrow">
-        <img src={nextArrow} alt="nextArrow image" />
-      </ArrowContainer>
-    </CarouselContainer>
+        <ArrowContainer
+          onClick={() => toggleImage(1)}
+          className=" nextArrow">
+          <img src={nextArrow} alt="nextArrow image" />
+        </ArrowContainer> </>)}
+    </CarouselContainer >
   )
 }
 
